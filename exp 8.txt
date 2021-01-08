@@ -1,0 +1,31 @@
+#1 
+CREATE TABLE Employee(
+    code CHAR(6) PRIMARY KEY,
+    name VARCHAR(80),
+    dob date,
+    designation VARCHAR(100),
+    salary FLOAT
+);
+
+#2
+INSERT INTO Employee (code, name, dob, designation, salary)
+VALUES
+('12','Akhil,'1998-08-04','Accountant',35000),
+('15','Jeena','1997-03-03','General Manager',65000),
+('17','Tom','1994-01-19','Officer',25000),
+('18','Mike','2000-02-26','Clerk',15000);
+
+#3
+SELECT SUM(salary) FROM Employee WHERE designation='Clerk';
+
+#4
+SELECT MAX(salary) FROM Employee;
+
+#5
+SELECT AVG(salary) FROM Employee;
+
+#6
+SELECT MIN(salary) FROM Employee;
+
+#7
+SELECT COUNT(*) FROM Employee;
