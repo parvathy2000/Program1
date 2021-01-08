@@ -1,0 +1,36 @@
+#1
+CREATE TABLE Employee(
+    code CHAR(4) PRIMARY KEY,
+    name VARCHAR(60),
+    dob DATE,
+    designation VARCHAR(80),
+    salary FLOAT
+);
+
+INSERT INTO Employee(code, name, dob, designation, salary)
+VALUES
+('01','Reena','2000-04-22','Manager',190000),
+('02','James','1999-03-13','CEO',175000),
+('03','Vincent','1997-02-17','Clerk',60000),
+('04','Antony','1994-07-27','Auditor',60000);
+
+#2
+SELECT * FROM Employee ORDER BY name DESC;
+
+#3
+CREATE TABLE Deposit(
+    baccno BIGINT,
+    branch_name VARCHAR(60),
+    amount FLOAT
+);
+
+INSERT INTO Deposit(baccno, branch_name, amount)
+VALUES
+(2000001,'kannur',470000.25),
+(2000002,'kannur',381243.22),
+(2000003,'karunagapally',224570.1),
+(2000004,'kannur',110083.78),
+(2000005,'alapuzha',230090.90);
+
+#4
+SELECT branch_name,COUNT(baccno),SUM(amount) FROM Deposit GROUP BY branch_name;
